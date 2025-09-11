@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile Card</title>
+    <style>
+      body {
+        background: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .card {
+        background: white;
+        width: 300px;
+         height: 350px;
+      
+        padding: 20px; /* Inside spacing */
+        margin: 30px; /* Outside spacing */
+        border: 5px solid blue; /* Border */
+        border-radius: 10px;
+        text-align: center;
+        box-sizing: border-box; /* Keep fixed size */
+        background: linear-gradient(to right, #ff9a9e, #fad0c4);
+        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+      }
+
+      .card img {
+        border-radius: 50%; /* Make photo round */
+        border: 3px solid black;
+        width: 150px;
+         object-fit: cover; 
+      }
+
+      .card h2 {
+        margin: 10px 0; /* Vertical spacing */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <img
+        src="https://wallpapers.com/images/hd/professional-profile-pictures-1080-x-1080-460wjhrkbwdcp1ig.jpg"
+        alt="Profile Photo"
+      />
+      <h2>Shivshankar Munde</h2>
+      <p>Learning Web Development 🚀</p>
+    </div>
+    <div class="card">
+      <img
+        src="https://media.istockphoto.com/id/1300512215/photo/headshot-portrait-of-smiling-ethnic-businessman-in-office.webp?b=1&s=170667a&w=0&k=20&c=TXCiY7rYEvIBd6ibj2bE-VbJu0rRGy3MlHwxt2LHt9w="
+        alt="another profile image"
+      />
+      <h2>Shivshankar Munde</h2>
+      <p>Learning Web Development 🚀</p>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       .container2 {
+  width: 100%;  /* take full screen width */
+  max-width: 600px; /* but don’t stretch too much */
+  background: linear-gradient(to right, red, yellow, blue);
+  display: flex;
+  flex-wrap: wrap;  /* wrapping enabled */
+  gap: 10px;
+  padding: 10px;
+  margin: auto; /* center on page */
+}
+
+.box1 {
+  flex: 1 1 180px;  /* responsive width */
+  height: 100px;
+  background-color: violet;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+
+    </style>
+</head>
+<body>
+   <div class="container2">
+  <div class="box1">1</div>
+  <div class="box1">2</div>
+  <div class="box1">3</div>
+  <div class="box1">4</div>
+  <div class="box1">5</div>
+  <div class="box1">6</div>
+</div>
+
+</body>
+</html>

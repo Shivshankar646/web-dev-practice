@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    text-align: center;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(1, 2fr);
+    gap: 30px;
+}
+
+.photo img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.photo img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 20px 25px rgba(3, 241, 3, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="gallary">
+      <div class="photo">
+        <img
+          src="https://tse2.mm.bing.net/th/id/OIP.WL_IcF7NjiX9fBVgEQYQ3wHaEo?pid=Api&P=0&h=180"
+          alt="photo"
+        />
+    </div>
+      <div class="photo">
+        <img
+          src="https://tse2.mm.bing.net/th/id/OIP.WL_IcF7NjiX9fBVgEQYQ3wHaEo?pid=Api&P=0&h=180"
+          alt="photo"
+        />
+    </div>
+      <div class="photo">
+        <img
+          src="https://tse2.mm.bing.net/th/id/OIP.WL_IcF7NjiX9fBVgEQYQ3wHaEo?pid=Api&P=0&h=180"
+          alt="photo"
+        />
+    </div>
+      <div class="photo">
+        <img
+          src="https://tse2.mm.bing.net/th/id/OIP.WL_IcF7NjiX9fBVgEQYQ3wHaEo?pid=Api&P=0&h=180"
+          alt="photo"
+        />
+    </div>
+      <div class="photo">
+        <img
+          src="https://tse2.mm.bing.net/th/id/OIP.WL_IcF7NjiX9fBVgEQYQ3wHaEo?pid=Api&P=0&h=180"
+          alt="photo"
+        />
+    </div>
+      <div class="photo">
+        <img
+          src="https://tse2.mm.bing.net/th/id/OIP.WL_IcF7NjiX9fBVgEQYQ3wHaEo?pid=Api&P=0&h=180"
+          alt="photo"
+        />
+    </div>
+      <div class="photo">
+        <img
+          src="https://tse2.mm.bing.net/th/id/OIP.WL_IcF7NjiX9fBVgEQYQ3wHaEo?pid=Api&P=0&h=180"
+          alt="photo"
+        />
+    </div>
+    <div class="photo">
+      <img
+        src="https://tse2.mm.bing.net/th/id/OIP.WL_IcF7NjiX9fBVgEQYQ3wHaEo?pid=Api&P=0&h=180"
+        alt="photo"
+      />
+    </div>
+</div>
+
+
+  </body>
+</html>

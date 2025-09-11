@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>practice</title>
+    <style>
+     body {
+  margin: 0;
+  padding-top: 60px; /* adjust this number to match navbar height */
+}
+
+      .navbar {
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        background-color: red;
+        border-radius: 10px;
+        width: 100%;
+       text-align: center;
+     
+      }
+
+      .container {
+        width: 100%;
+        height: 200px;
+        background-color: green;
+        position: relative;
+        margin: 20px;
+      }
+      .static {
+        background-color: aqua;
+        margin: 20px;
+      }
+      .absolute {
+        position: absolute;
+        background-color: bisque;
+        top: 20px;
+        right: 20px;
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="navbar">i am nav bar</div>
+    <div class="static">this is static box</div>
+    <div class="container">
+      <div class="absolute">I am absolute box</div>
+    </div>
+    <div style="width: 100%; height: 1000px" class="content">
+      this is for scrolling
+    </div>
+  </body>
+</html>

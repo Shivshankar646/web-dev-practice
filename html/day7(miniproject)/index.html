@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>blog page</title>
+    <style>
+        body{
+            background-color: black;
+            color: white;
+        }
+        img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+header{
+  height: 100px;
+  text-align: center;
+  padding: 20px;
+  color: white;
+  background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+
+}
+
+        h1{
+            display: flex;
+            justify-content: center;
+            align-content: center;
+        }
+        nav{
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            position: relative;
+            left: -2px;
+            gap: 50px;
+            background-color: rgb(5, 222, 110);
+           
+  padding: 10px;
+  border-radius: 20px;
+
+            border-radius: 20px;
+        }
+        nav a{
+            text-decoration: none;
+            color: rgb(245, 241, 241);
+            background-color: rgb(19, 2, 2);
+            border-radius: 10px;
+        }
+        nav:hover{
+            background-color: green;
+            color: violet;
+        }
+        nav a:hover{
+            background-color: rgb(5, 135, 248);
+        }
+        article {
+  margin-bottom: 40px;
+  padding: 10px;
+  border-bottom: 1px solid gray;
+}
+main {
+  display: flex;
+  gap: 20px;
+}
+
+#articles {
+  flex: 3;
+}
+
+aside {
+  flex: 1;
+  background: #222;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Shivshankar's blog</h1> 
+      <nav>
+        <a href="#home">Home</a> | <a href="#articles">Articles</a> |
+        <a href="#about">About</a>
+      </nav>
+    </header>
+    <main>
+      <section id="articles">
+        <article>
+          <h2>My First Blog Post</h2>
+          <p><small>By Shivshankar | August 31, 2025</small></p>
+          <img
+            src="https://familista.de/wp-content/uploads/2015/01/blog_screenshot.png"
+          
+            alt="Blog image"
+          />
+          <p>
+            This is my very first blog post. I am learning web development and
+            building projects step by step. It's really exciting to create
+            something from scratch.
+          </p>
+          <a href="#">Read more...</a>
+        </article>
+
+        <article>
+          <h2>Why I Love Coding</h2>
+          <p><small>By Shivshankar | September 1, 2025</small></p>
+          <img
+            src="https://cdn.pixabay.com/photo/2024/06/14/12/15/developer-8829735_1280.jpg"
+            alt="Coding image"
+          />
+          <p>
+            Coding allows me to solve problems, build projects, and bring my
+            ideas into reality. In this post, I share why coding feels like my
+            passion.
+          </p>
+          <a href="#">Read more...</a>
+        </article>
+
+        <article>
+          <h2>I Want Freedom</h2>
+          <p><small>By Shivshankar | October 2, 2025</small></p>
+          <img
+            src="https://wallpaperaccess.com/full/2046801.jpg"
+           
+            alt="bmw car "
+          />
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga
+            repellendus molestiae excepturi porro ipsa nam odio ipsum? Quaerat,
+            consequuntur debitis!
+          </p>
+          <a href="https://wallpaperaccess.com/full/2046801.jpg">Read more...</a>
+        </article>
+      </section>
+      <aside>
+        <h3>Categories</h3>
+        <ul>
+          <li>Web Development</li>
+          <li>Programming</li>
+          <li>Personal</li>
+        </ul>
+      </aside>
+    </main>
+    <footer>
+      <p>© 2025 Shivshankar's Blog. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

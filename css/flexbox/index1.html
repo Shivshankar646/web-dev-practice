@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>practice</title>
+    <style>
+      body {
+        background-color: aqua;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        color: black;
+      }
+      .container {
+        width: 100%;
+        height: 300px;
+        background-color: brown;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 20px;
+      }
+      .box {
+        width: 100px;
+        height: 100px;
+        background-color: blue;
+      }
+      .navbar {
+        width: 100%;
+        
+        background-color: blanchedalmond;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        border-radius: 20px;
+        margin: 20px;
+      }
+      .container1 {
+        width: 100%;
+        height: 300px;
+        background-color: red;
+        display: flex;
+        justify-content: space-between;
+        margin: 20px;
+      }
+      .container2 {
+        width: 600px;
+       
+        background: linear-gradient(to right, red, yellow, blue);
+        display: flex;
+        
+        flex-wrap: wrap;
+      
+      }
+    .container2 {
+  width: 100%;  /* take full screen width */
+  max-width: 600px; /* but don’t stretch too much */
+  background: linear-gradient(to right, red, yellow, blue);
+  display: flex;
+  flex-wrap: wrap;  /* wrapping enabled */
+  gap: 10px;
+  padding: 10px;
+  margin: auto; /* center on page */
+}
+
+.box1 {
+  flex: 1 1 180px;  /* responsive width */
+  height: 100px;
+  background-color: violet;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box"></div>
+    </div>
+    <div class="navbar">
+      <a href="#home">Home</a> | <a href="#about">About</a> |
+      <a href="#service">Service</a> | <a href="#blog">Blog</a> |
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="container1">
+      <div class="box">1</div>
+      <div class="box">2</div>
+      <div class="box">3</div>
+      <div class="box">4</div>
+      <div class="box">5</div>
+      <div class="box">6</div>
+    </div>
+
+    <div class="container2">
+      <div class="box1">1</div>
+      <div class="box1">2</div>
+      <div class="box1">3</div>
+      <div class="box1">4</div>
+      <div class="box1">5</div>
+      <div class="box1">6</div>
+    </div>
+    <div class="container3">
+        <div class="box">1</div>
+      <div class="box">2</div>
+      <div class="box">3</div>
+    </div>
+  </body>
+</html>
