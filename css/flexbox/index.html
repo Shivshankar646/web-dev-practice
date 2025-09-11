@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flexbox Playground</title>
+  <style>
+    body {
+      background: black;
+      color: white;
+      font-family: Arial;
+    }
+
+    .container {
+      display: flex;
+      justify-content:flex-start;   /* Try: flex-start, flex-end, space-between */
+      align-items:start;       /* Try: flex-start, flex-end, stretch */
+    flex-wrap: wrap;/* Try: nowrap, wrap */
+      gap: 20px;                 /* Space between items */
+      height: 100vh;
+      background: darkgreen;
+    }
+
+    .box {
+      width: 150px;
+      height: 150px;
+      background: orange;
+      display: flex;
+      justify-content: space-around;
+      align-items: flex-end;
+      font-size: 20px;
+      font-weight: bold;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+    <div class="box">4</div>
+    <div class="box">5</div>
+    <div class="box">6</div>
+  </div>
+</body>
+</html>
+

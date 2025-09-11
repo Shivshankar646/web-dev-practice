@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        nav{
+            background-color: rgb(202, 192, 192);
+            color: rgb(228, 7, 7);
+            text-decoration:darkolivegreen;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 10px;
+            border-radius: 20px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        header nav a{
+            color: rgb(6, 9, 9);
+            text-decoration: none;
+        }
+        nav a:hover{
+            background-color: rgb(239, 239, 236);
+            color: rgb(10, 5, 5);
+            border-radius: 10px;
+        }
+        .container{
+            
+            background-color: aqua;
+            padding: 20px;
+            display: grid;
+            gap: 20px;
+            grid-template-columns: repeat(4,1fr);
+            margin: 20px;
+            border-radius: 20px;
+          
+        }
+        .box{
+           
+            background-color: rgb(236, 31, 4);
+            padding: 20px;
+            border-radius: 20px;
+          text-align: center;
+        }
+        @media (max-width:900px) {
+            .container{
+                grid-template-columns: repeat(2,1fr);
+            }
+        }
+        @media (max-width:600px) {
+            .container{
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="home">Home</a> |
+            <a href="about">About</a> |
+            <a href="contact">Contact</a>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="box">box1</div>
+        <div class="box">box2</div>
+        <div class="box">box3</div>
+        <div class="box">box4</div>
+        <div class="box">box5</div>
+        <div class="box">box6</div>
+    </div>
+</body>
+</html>

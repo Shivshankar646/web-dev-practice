@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Position Demo</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Fixed Navbar */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: black;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+
+    /* Static Box (default) */
+    .static-box {
+      background: lightblue;
+      padding: 20px;
+      margin-top: 80px; /* so it doesn't hide under navbar */
+    }
+
+    /* Relative container */
+    .relative-box {
+      position: relative;
+      background: lightgreen;
+      height: 200px;
+      margin: 20px;
+    }
+
+    /* Absolute box inside relative container */
+    .absolute-box {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: orange;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Fixed Navbar -->
+  <div class="navbar">🚀 I am FIXED (Always at top)</div>
+
+  <!-- Static box -->
+  <div class="static-box">📦 I am STATIC (default)</div>
+
+  <!-- Relative container -->
+  <div class="relative-box">
+    📦 I am RELATIVE (my child can move inside me)
+    <div class="absolute-box">📦 I am ABSOLUTE (inside parent)</div>
+  </div>
+
+  <!-- Scroll to test fixed navbar -->
+  <p style="height:1000px; padding:20px;">
+    Scroll down 👇 to see the fixed navbar stay on top.
+  </p>
+</body>
+</html>
