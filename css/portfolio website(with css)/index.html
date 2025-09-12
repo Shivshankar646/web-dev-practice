@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My portfolio</title>
+    <style>
+        html{
+            scroll-behavior: smooth;
+        }
+      body {
+        background-color: black;
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+       
+      }
+      nav {
+        position: sticky;
+        background-color: rgb(0, 235, 235);
+        color: black;
+        padding: 1%;
+        margin: 10px;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        align-items: center;
+        flex-wrap: wrap;
+        text-align: center;
+        border: 2px solid white;
+      }
+      header nav a {
+        text-decoration: none;
+        color: rgb(0, 0, 0);
+      }
+      h1 {
+        text-align: center;
+        color: blue;
+      }
+      #about{
+      display: grid;
+      width: 100%;
+      grid-template-columns: repeat(2,1fr);
+      background-color: red;
+      gap: 50px;
+     
+      }
+      main section article{
+        align-items: center;
+        justify-items: center;
+      }
+      main section img{
+       justify-self: center;
+       align-self: center;
+       border-radius: 10px;
+       border: 2px solid;
+      
+      }
+      #projects img{
+width: 80%;
+      }
+      aside{
+        margin: 20px;
+      }
+      @media (max-width:768px) {
+        #about{
+            grid-template-columns: 1fr;
+            padding: 20px;
+        }
+        nav{
+            flex-direction: column;
+        }
+      }
+      #contact{
+        padding: 20px;
+
+      }
+      #contact input{
+        padding: 10px;
+        border-radius: 10px;
+      }
+      #contact textarea{
+        padding-bottom: 20px;
+        border-radius: 10px;
+      }
+      footer{
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="#about">About</a> | <a href="#projects">Projects</a> |
+        <a href="#contact">Contact</a>
+      </nav>
+      <h1>Munde Shivshankar Suresh</h1>
+    </header>
+    <main>
+      <section id="about">
+          <article>
+            <h3>About Me:</h3>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis commodi
+          perspiciatis dolorem culpa iste illo molestias provident illum, quidem
+          voluptates eveniet vero quod iusto libero?
+        </article>
+        <img
+          src="https://tse4.mm.bing.net/th/id/OIP.hLTThhxHPeGqFQVjpD1-hwHaE8?pid=Api&P=0&h=180"
+        width="300px" height="auto"  alt="my image"
+        />
+      </section>
+
+      <section id="projects">
+<h2>List of Projects:</h2>
+<h3>1.spotify clone:</h3>
+<p>This spotify clone website is made my me i am creater of this website</p>
+<img src="https://user-images.githubusercontent.com/77545230/195864518-3e75198b-9829-4a40-af02-a636abc188c0.png"  alt="spotify clone website screenshot">
+
+<h2>2.portfolio:</h2>
+<p>this website is created by me i am the owner of this website</p>
+<img src="https://cdn.dribbble.com/users/95660/screenshots/1144811/attachments/147663/portfolio-screenshot-project-detail.png" alt="portfolio website">
+      </section>
+      <aside>
+        <h2>List Of Skills:</h2>
+        <h3>1.Html</h3>
+        <h3>2.css</h3>
+        <h3>3.javascript</h3>
+      </aside>
+      <section id="contact">
+        <h2>For Contact Me</h2>
+<form>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="username" placeholder="Enter your name"> <br><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="useremail" placeholder="enter your email"> <br><br>
+
+    
+    <textarea name="message"id="message">Message:</textarea> <br><br>
+    <input type="submit">
+</form>
+      </section>
+    </main>
+    <footer>
+        <p>Name:Shivshankar Munde</p>
+        <p>Email:shivshankarmunde91@gmail.com</p>
+        <p>All copyright reserved upto @2025</p>
+
+    </footer>
+  </body>
+</html>
