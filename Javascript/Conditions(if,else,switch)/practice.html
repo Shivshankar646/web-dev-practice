@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <style>
+.grid {
+  display: grid;
+  grid-template-columns: 100px 100px;
+  height: 300px;
+  border: 3px solid black;
+
+  /* Try these one by one */
+  /* justify-content: center; moves whole grid horizontally */
+  /* align-content: center;   moves whole grid vertically */
+
+  justify-items: center;  /*centers items inside each cell*/
+  align-items: center;   /* centers items inside each cell*/
+}
+.item {
+  background: lightblue;
+  border: 1px solid blue;
+}
+</style>
+</head>
+<body>
+  <div class="grid">
+  <div class="item">1</div>
+  <div class="item">2</div>
+</div>
+</body>
+</html>
