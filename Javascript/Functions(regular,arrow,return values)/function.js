@@ -1,113 +1,127 @@
-// //1.Regular function
-// function greet(name){
-//     console.log("Hello,"+name+"!")
-// }
-// greet("shivshankar");
-
-
-// //2.Function with return
-// // function add(a,b){
-// //     return a+b;
+// // //1.Regular function
+// // function greet(name){
+// //     console.log("Hello,"+name+"!")
 // // }
-// // let result=add(3,5);
-// // console.log(result);
-// // console.log(add(3,5)) //same output
+// // greet("shivshankar");
 
-// //3.Function Expression
-// const square = function(num) {
-//     console.log(num)
-//     return num*num;
-// };
-// console.log(square(5));
 
-// //4.Arrow Function
-// const multiply = (a,b) => a*b;
-// console.log(multiply(5,5));
+// // //2.Function with return
+// // // function add(a,b){
+// // //     return a+b;
+// // // }
+// // // let result=add(3,5);
+// // // console.log(result);
+// // // console.log(add(3,5)) //same output
 
-// //5.Arrow Function(single line)
-// const double=x => x*2;
-// console.log(double(2))
+// // //3.Function Expression
+// // const square = function(num) {
+// //     console.log(num)
+// //     return num*num;
+// // };
+// // console.log(square(5));
 
-// //✅ Key points to remember:
+// // //4.Arrow Function
+// // const multiply = (a,b) => a*b;
+// // console.log(multiply(5,5));
 
-// //.function keyword → Regular function.
+// // //5.Arrow Function(single line)
+// // const double=x => x*2;
+// // console.log(double(2))
 
-// //.return → Sends value back to where function is called.
+// // //✅ Key points to remember:
 
-// //.Arrow functions (=>) are shorter & modern.
+// // //.function keyword → Regular function.
 
-// //.You can store functions in variables.
+// // //.return → Sends value back to where function is called.
 
-// //This is for practice purpose:
+// // //.Arrow functions (=>) are shorter & modern.
 
-// //even or odd
-// function checkevenodd (num){
-//     if(num%2==0){
-//         return "Even"
-//     } else {
-//         return "Odd"
-//     }
-// }
-// console.log(checkevenodd(5));
-// console.log(checkevenodd(4));
+// // //.You can store functions in variables.
 
-// //factorial of a number
-// function factorial (n){
-//     let result=1;
-//     for (let i = n; i >=1; i--) {
+// // //This is for practice purpose:
+
+// // //even or odd
+// // function checkevenodd (num){
+// //     if(num%2==0){
+// //         return "Even"
+// //     } else {
+// //         return "Odd"
+// //     }
+// // }
+// // console.log(checkevenodd(5));
+// // console.log(checkevenodd(4));
+
+// // //factorial of a number
+// // function factorial (n){
+// //     let result=1;
+// //     for (let i = n; i >=1; i--) {
        
-//         result*=i;
-//     }
-//     return result;
-// }
+// //         result*=i;
+// //     }
+// //     return result;
+// // }
 
-// console.log(factorial(5));
+// // console.log(factorial(5));
 
-// //Write a function that takes n and returns the sum from 1 to n.
-// function nsum (n){
-//     let sum=0;
-//     for (let i = 1; i <=n ; i++) {
+// // //Write a function that takes n and returns the sum from 1 to n.
+// // function nsum (n){
+// //     let sum=0;
+// //     for (let i = 1; i <=n ; i++) {
      
-//         sum+=i;
-//     }
-//     return sum;
-// }
-// console.log(nsum(100));
+// //         sum+=i;
+// //     }
+// //     return sum;
+// // }
+// // console.log(nsum(100));
 
-// //Write a function that prints the multiplication table of a number.
-// function table (n){
-//     for (let i = 1; i <=10 ; i++) {
+// // //Write a function that prints the multiplication table of a number.
+// // function table (n){
+// //     for (let i = 1; i <=10 ; i++) {
      
-//         console.log(n,'x',i,'=',(n*i))
-//     }
-// }
-// table(100);
+// //         console.log(n,'x',i,'=',(n*i))
+// //     }
+// // }
+// // table(100);
 
-// //sum of first n numbers:
-// const sumtonarrow=(n) => {
-//     let sum=0;
-//     for (let i = 1; i <=n ; i++) {
-//        sum+=i;
+// // //sum of first n numbers:
+// // const sumtonarrow=(n) => {
+// //     let sum=0;
+// //     for (let i = 1; i <=n ; i++) {
+// //        sum+=i;
         
-//     }
-//     return sum;
+// //     }
+// //     return sum;
+// // }
+// // console.log(sumtonarrow(50));
+
+// // const sumToNArrow = n => (n * (n + 1)) / 2; // formula
+// // console.log(sumToNArrow(5)); // 1275
+
+// //for finding prime number
+
+// function isprime (num){
+//     if (num<=1) return false;
+//     for (let i = 2; i <= num ; i++) {
+
+//     if(num%i===0){
+//      return false;  
+//     }return true;
 // }
-// console.log(sumtonarrow(50));
+   
+// }
+// console.log(isprime(45));
 
-// const sumToNArrow = n => (n * (n + 1)) / 2; // formula
-// console.log(sumToNArrow(5)); // 1275
+function isprime(num) {
+    if (num <= 1) return false;
 
-//for finding prime number
-
-function isprime (num){
-    if (num<=1) return false;
-    for (let i = 2; i <= num ; i++) {
-
-    if((num%1==0 && num%i===0)){
-     return false;
-       
+    for (let i = 2; i <= Math.sqrt(num); i++) {
+        if (num % i === 0) {
+            return false;
+        }
     }
-   return true;
+
+    return true;
 }
-}
-console.log(isprime(1));
+
+console.log(isprime(45)); // false
+console.log(isprime(7));  // true
