@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background: black;
+    margin: 20px;
+
+}
+.container{
+    display: grid;
+    justify-items: center;
+    align-items: center;
+   grid-template-columns: repeat(3,50px);
+   justify-content: center;
+   align-items: center;
+   gap: 10px;
+   
+   
+
+}
+.ans{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+.ans input{
+    border:2px solid red;
+    border-radius: 20px;
+    padding: 20px;
+
+}
+.container button{
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid rgb(238, 130, 130);
+    cursor: pointer;
+}
