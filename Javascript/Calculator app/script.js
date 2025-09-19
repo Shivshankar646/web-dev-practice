@@ -2,26 +2,19 @@
 function shownumber(num){
 document.getElementById("display").value += num;
 console.log(num);
-switch (key) {
-    case "+" ,num+num:
-        
-        break;
-
-    default:
-        break;
-}
-
 }
 
 function showsine(sine){
     document.getElementById("display").value +=sine;
     console.log(sine);
 }
-function clear(C){
+function cleardisplay(){
    
-    console.log(key)
+   document.getElementById("display").value="";
     
 }
 
 function showequal(){
+    let exp = document.getElementById("display").value;
+ document.getElementById("display").value =eval(exp)
 }
