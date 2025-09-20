@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom</title>
+</head>
+<body>
+    <button onclick="pr()" id="but">bhai</button>
+    <input type="text" id="myInput" value="hi">
+    <input type="text" id="myinput" value="hello">
+    <p class="text">First</p>
+    <p class="text">Second</p>
+    <script>
+        const input = document.getElementById("myinput");
+        console.log(input.value);
+
+        const firstpara=document.querySelector(".text");
+        console.log(firstpara.textContent);
+
+        const allpara=document.querySelectorAll(".text");
+        allpara.forEach(p => console.log(p.textContent))
+
+        //1.Selects an input using querySelector.
+        const myp=document.querySelector("#myInput");
+console.log(myp.value);
+
+//2.Selects a button using getElementById
+const btn=document.getElementById("but");
+console.log(btn.textContent);
+
+//3.On button click, logs whatever is inside the input.
+function pr(){
+const input1=document.getElementById("myInput")
+console.log(input1.value)
+}
+    </script>
+</body>
+</html>
