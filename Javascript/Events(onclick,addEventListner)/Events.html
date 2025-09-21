@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+</head>
+<body>
+    <!-- <button id="btn" onclick="sayhello()">Click me</button> -->
+     <button id="btn">click me</button>
+     <button onclick="alert('you have clicked wrong button')">click</button>
+     <p id="msg">Before click</p>
+    <script>
+        // function sayhello (){
+        //     console.log("Hello")
+        // }
+
+        // const btn =document.getElementById("btn");
+        // btn.onclick = function (){
+        //     console.log("bhai")
+        // }
+
+        const btn=document.getElementById("btn");
+        btn.addEventListener("click", () =>{
+            console.log("first click handler");
+            document.body.style.backgroundColor="red";
+            
+        });
+        btn.addEventListener("click",() => {
+            console.log("second click handler");
+        })
+        btn.addEventListener("click",() => {
+            document.getElementById("msg").textContent="after click"
+        })
+    </script>
+</body>
+</html>
