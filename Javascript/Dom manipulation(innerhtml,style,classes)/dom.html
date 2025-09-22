@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom</title>
+    <style>
+        .big{
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <!-- <div id="demo" onclick="say()">Shiv saying hello to dom</div> -->
+     <p id="demo">Hi!</p>
+     <button onclick="change()">Change</button>
+
+    <script>
+        // function say(){
+        //     document.getElementById("demo").innerHTML="hello html bro";
+        //     document.getElementById("demo").style.background="yellow";
+        //     // document.getElementById("demo").classList.add("highlight");
+        //     // document.getElementById("demo").classList.remove("highlight");
+        //     document.getElementById("demo").classList.toggle("highlight")
+        // }
+        function change(){
+            const p=document.getElementById("demo");
+            p.innerHTML="changed text!";
+            p.style.color="blue";
+            p.classList.toggle("big");
+        }
+    </script>
+</body>
+</html>

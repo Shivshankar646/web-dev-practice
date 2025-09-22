@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom practice</title>
+    <style>
+        .big{
+            font-size: 30px;
+            font-weight: bold;
+           
+        }
+    </style>
+</head>
+<body>
+    <p id="demo">Hello</p>
+    <button onclick="change()">change</button>
+    <div id="do">this is div</div>
+    <button onclick="changecolor()">chage color</button>
+    <button onclick="bhai()">click to make paragraph text big and bold</button>
+    <p id="shiv">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt expedita soluta reiciendis ut facilis, distinctio itaque necessitatibus maxime omnis, nihil magni aliquam asperiores deserunt ratione.</p>
+  <script>
+    function change(){
+        document.getElementById("demo").innerHTML="Welcome To Javascript!";
+    }
+    function changecolor(){
+        const door =document.getElementById("do");
+        door.style.backgroundColor="yellow";
+        door.style.color="red";
+      
+}
+function bhai(){
+document.getElementById("shiv").classList.toggle("big")
+}
+  </script>
+</body>
+</html>
