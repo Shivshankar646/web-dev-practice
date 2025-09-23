@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="myform">
+        <input type="text" id="username" placeholder="Enter your name">
+        <input type="number" id="age" placeholder="Enter your age">
+        <input type="email" id="email" placeholder="Enter your email">
+        <button type="submit">Submit</button>
+        <p id="error"></p>
+    </form>
+    <script>
+        const form =document.getElementById("myform");
+        form.addEventListener("submit",function(e){
+            e.preventDefault();
+            const username =document.getElementById("username").value;
+            const age=Number(document.getElementById("age").value);
+            const email = document.getElementById("email").value;
+            console.log(age)
+            if (username === "" || age === "") {
+                document.getElementById("error").innerHTML="all fields are required";
+            } else if(username.length < 3){
+            document.getElementById("error").innerText="name should be greater that 3 character"
+            } else if(age<18) {
+                document.getElementById("error").innerHTML="You must be 18 or older";
+
+            } else if(email === "" || !email.includes("@") || !email.includes(".")){
+document.getElementById("error").innerHTML="Enter a valid email"
+            }else {
+                document.getElementById("error").innerHTML="Welcome " + username + ", age " + age + " ✅";
+
+            }
+        })
+    </script>
+</body>
+</html>
