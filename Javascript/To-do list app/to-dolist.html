@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-Do List App</title>
+</head>
+<body>
+  <input type="text" id="task" placeholder="Enter your task here">
+  <button onclick="addtask()">Add Task</button>
+  <ol id="show"></ol>
+
+  <script>
+    function addtask() {
+      let task = document.getElementById("task").value;
+
+      if (task === "") return;  // prevent empty tasks
+
+      const create = document.createElement("li");
+      create.innerText = task;
+
+      const btn = document.createElement("button");
+      btn.innerHTML = " ❌";
+
+      btn.addEventListener("click", () => {
+        console.log(li)
+        li.remove(); // ✅ correct variable
+      });
+
+      create.appendChild(btn);
+      document.getElementById("show").appendChild(create);
+
+      document.getElementById("task").value = "";
+    }
+  </script>
+</body>
+</html>
