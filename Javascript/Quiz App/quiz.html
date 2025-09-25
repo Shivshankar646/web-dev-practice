@@ -1,0 +1,67 @@
+<div class="container">
+  <p id="question"></p>
+  <div id="options"></div>
+  <button id="next">Next</button>
+</div>
+
+<script>
+const quizData = [
+  {
+    question: "What is the capital of France?",
+    options: ["Berlin", "Paris", "Rome", "Madrid"],
+    correct: "Paris"
+  },
+  {
+    question: "Which language runs in a web browser?",
+    options: ["Java", "C", "Python", "JavaScript"],
+    correct: "JavaScript"
+  }
+];
+
+let currentQuestion = 0;
+let score = 0;
+
+function loadQuestion() {
+  const questionEl = document.getElementById("question");
+  const optionsEl = document.getElementById("options");
+
+  questionEl.innerText = quizData[currentQuestion].question;
+  optionsEl.innerHTML = ""; // clear previous options
+
+  quizData[currentQuestion].options.forEach((option, index) => {
+    const radio = document.createElement("input");
+    radio.type = "radio";
+    radio.name = "quiz";
+    radio.id = "option" + index;
+    radio.value = option;
+
+    const label = document.createElement("label");
+    label.htmlFor = "option" + index;
+    label.innerText = option;
+
+    optionsEl.appendChild(radio);
+    optionsEl.appendChild(label);
+    optionsEl.appendChild(document.createElement("br"));
+  });
+}
+
+document.getElementById("next").addEventListener("click", () => {
+  const selected = document.querySelector('input[name="quiz"]:checked');
+  if (selected) {
+    if (selected.value === quizData[currentQuestion].correct) {
+      score++;
+    }
+    currentQuestion++;
+    if (currentQuestion < quizData.length) {
+      loadQuestion();
+    } else {
+      document.querySelector(".container").innerHTML = `<h2>You scored ${score} out of ${quizData.length}</h2>`;
+    }
+  } else {
+    alert("Select an option first!");
+  }
+});
+
+// load first question
+loadQuestion();
+</script>
