@@ -1,67 +1,93 @@
-<div class="container">
-  <p id="question"></p>
-  <div id="options"></div>
-  <button id="next">Next</button>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz App Built by Myself</title>
+</head>
+<body>
+  <div class="container">
+    <p id="question"></p>
+    <p id="option"></p>
+    <button id="next">Next</button>
+  </div>
+  
+  <script>
+    const quizData = [
+      {
+        question: "What is the capital of France?",
+        options: ["Berlin", "Paris", "Rome", "Madrid"],
+        correct: "Paris"
+      },
+      {
+        question: "Which language runs in a web browser?",
+        options: ["Java", "C", "Python", "JavaScript"],
+        correct: "JavaScript"
+      }
+    ];
 
-<script>
-const quizData = [
-  {
-    question: "What is the capital of France?",
-    options: ["Berlin", "Paris", "Rome", "Madrid"],
-    correct: "Paris"
-  },
-  {
-    question: "Which language runs in a web browser?",
-    options: ["Java", "C", "Python", "JavaScript"],
-    correct: "JavaScript"
-  }
-];
+    let currentquestion = 0;
+    let score = 0;
 
-let currentQuestion = 0;
-let score = 0;
+    function loadquizdata() {
+      const questions1 = document.getElementById("question");
+      const options1 = document.getElementById("option");
+      questions1.innerHTML = quizData[currentquestion].question;
+      options1.innerHTML = "";
 
-function loadQuestion() {
-  const questionEl = document.getElementById("question");
-  const optionsEl = document.getElementById("options");
+      quizData[currentquestion].options.forEach((option, index) => {
+        const radio = document.createElement("input");
+        radio.type = "radio";
+        radio.name = "quiz";
+        radio.value = option;
 
-  questionEl.innerText = quizData[currentQuestion].question;
-  optionsEl.innerHTML = ""; // clear previous options
+        const label = document.createElement("label");
+        label.innerHTML = option;
 
-  quizData[currentQuestion].options.forEach((option, index) => {
-    const radio = document.createElement("input");
-    radio.type = "radio";
-    radio.name = "quiz";
-    radio.id = "option" + index;
-    radio.value = option;
-
-    const label = document.createElement("label");
-    label.htmlFor = "option" + index;
-    label.innerText = option;
-
-    optionsEl.appendChild(radio);
-    optionsEl.appendChild(label);
-    optionsEl.appendChild(document.createElement("br"));
-  });
-}
-
-document.getElementById("next").addEventListener("click", () => {
-  const selected = document.querySelector('input[name="quiz"]:checked');
-  if (selected) {
-    if (selected.value === quizData[currentQuestion].correct) {
-      score++;
+        options1.appendChild(radio);
+        options1.appendChild(label);
+        options1.appendChild(document.createElement("br"));
+      });
     }
-    currentQuestion++;
-    if (currentQuestion < quizData.length) {
-      loadQuestion();
-    } else {
-      document.querySelector(".container").innerHTML = `<h2>You scored ${score} out of ${quizData.length}</h2>`;
-    }
-  } else {
-    alert("Select an option first!");
-  }
-});
 
-// load first question
-loadQuestion();
-</script>
+    function nextQuestion() {
+      const selected = document.querySelector('input[name=quiz]:checked');
+      if (selected) {
+        if (selected.value === quizData[currentquestion].correct) {
+          score++;
+        }
+        currentquestion++;
+        if (currentquestion < quizData.length) {
+          loadquizdata();
+        } else {
+          document.querySelector(".container").innerHTML = `
+            <h2>Your score is ${score} out of ${quizData.length}</h2>
+            <button id="restart">Restart Quiz</button>
+          `;
+          document.getElementById("restart").addEventListener("click", restartQuiz);
+        }
+      } else {
+        alert("Select option first");
+      }
+    }
+
+    function restartQuiz() {
+      currentquestion = 0;
+      score = 0;
+
+      document.querySelector(".container").innerHTML = `
+        <p id="question"></p>
+        <p id="option"></p>
+        <button id="next">Next</button>
+      `;
+
+      document.getElementById("next").addEventListener("click", nextQuestion);
+      loadquizdata();
+    }
+
+    document.getElementById("next").addEventListener("click", nextQuestion);
+
+    loadquizdata();
+  </script>
+</body>
+</html>
