@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini Project</title>
+</head>
+<body>
+  <h2>Math & Fruits App 🍎</h2>
+
+  <input type="number" id="num1" placeholder="Enter first number">
+  <input type="number" id="num2" placeholder="Enter second number">
+
+  <button onclick="calculate()">Calculate</button>
+
+  <p id="mathResult"></p>
+  <hr>
+
+  <button onclick="showFruits()">Show Fruits</button>
+  <ul id="fruitResult"></ul>
+
+  <script>
+    // Arrow function for multiplication
+    const multiply = (a, b) => a * b;
+    const devision=(c,d) => c/d;
+
+    // Rest operator with reduce for sum
+    function sumAll(...nums) {
+      return nums.reduce((acc, curr) => acc + curr, 0);
+    }
+
+    function calculate() {
+      let n1 = Number(document.getElementById("num1").value);
+      let n2 = Number(document.getElementById("num2").value);
+
+      let product = multiply(n1, n2);
+      let total = sumAll(n1, n2, 10); // adding extra 10 just for fun 😄
+let devis =devision(n1,n2)
+      document.getElementById("mathResult").innerHTML =
+        `Product: ${product} <br> Sum: ${total} <br> devision: ${devis}`;
+    }
+
+    const fruits = ["apple", "banana"];
+    const moreFruits = ["mango", "orange"];
+    const allFruits = [...fruits, ...moreFruits]; // spread
+    function showFruits() {
+const list=document.getElementById("fruitResult");
+list.innerHTML="";
+      allFruits.forEach(fruit=>{
+     let li=document.createElement("li");
+     li.textContent=fruit;
+     list.appendChild(li);
+      });
+    }
+  </script>
+</body>
+</html>
