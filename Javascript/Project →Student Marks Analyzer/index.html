@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Marks Analyzer</title>
+</head>
+<body>
+<h2>Student Marks Analyzer</h2>
+<div id="result"></div>
+
+<script>
+const students = [
+  { name: "Shiv", marks: [85, 90, 78] },
+  { name: "Riya", marks: [92, 88, 79] },
+  { name: "Amit", marks: [70, 60, 80] }
+];
+
+let totals = [];
+let resultDiv = document.getElementById("result");
+
+// Display each student’s info
+students.forEach(student => {
+  let total = student.marks.reduce((acc, curr) => acc + curr, 0);
+  let average = total / student.marks.length;
+  totals.push(total);
+
+  let p = document.createElement("p");
+  p.innerHTML = `${student.name} → Marks: [${student.marks.join(", ")}], Total: ${total}, Average: ${average.toFixed(2)}`;
+  resultDiv.appendChild(p);
+});
+
+// Class-level stats
+let highest = Math.max(...totals);
+let lowest = Math.min(...totals);
+let classAverage = totals.reduce((acc, curr) => acc + curr, 0) / totals.length;
+
+let stats = document.createElement("p");
+stats.innerHTML = `<strong>Class Stats → Highest: ${highest}, Lowest: ${lowest}, Class Average: ${classAverage.toFixed(2)}</strong>`;
+resultDiv.appendChild(stats);
+</script>
+</body>
+</html>
