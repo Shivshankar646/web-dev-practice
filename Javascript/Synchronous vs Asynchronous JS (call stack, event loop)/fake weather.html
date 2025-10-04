@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fake Weather App</title>
+</head>
+<body>
+  <button onclick="getWeather()">Get Weather</button>
+  <p id="output"></p>
+
+  <script>
+    function getWeather() {
+      const output = document.getElementById("output");
+
+      output.innerHTML = "Weather App started...<br>";
+
+      // Show "Fetching..." after 0.5s
+      setTimeout(() => {
+        output.innerHTML += "Fetching weather data...<br>";
+      }, 500);
+
+      // Show "Doing other work..." after 1s
+      setTimeout(() => {
+        output.innerHTML += "Doing other work...<br>";
+      }, 1000);
+
+      // Show weather after 2s
+      setTimeout(() => {
+        output.innerHTML += "Weather: 🌞 Sunny, 30°C";
+      }, 2000);
+    }
+  </script>
+</body>
+</html>
