@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="show"></div>
+    <button onclick="fetchData()">Show data</button>
+    <script>
+        // Task 5:
+function showdata(){
+return new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve("Data received ✅")
+    }, 2000);
+})
+
+}
+
+
+async function fetchData() {
+    let show =document.getElementById("show");
+    show.innerHTML ="";
+show.innerHTML+= "Fetching data... <br>";
+try {
+    let data =await showdata();
+    show.innerHTML += data;
+} catch (error) {
+    show.innerHTML=error;
+}
+}
+
+    </script>
+</body>
+</html>
