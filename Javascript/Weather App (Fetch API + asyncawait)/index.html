@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather App 🌤️</title>
+</head>
+<body>
+  <h2>Weather App 🌦️</h2>
+  
+  <input type="text" id="city" placeholder="Enter city name">
+  <button onclick="getWeather()">Get Weather</button>
+
+  <div id="output"></div>
+
+  <script>
+    async function getWeather() {
+      const city = document.getElementById("city").value.trim();
+      const show = document.getElementById("output");
+      show.innerHTML = "Loading... ⏳";
+
+      if (!city) {
+        show.innerHTML = "⚠️ Please enter a city name.";
+        return;
+      }
+
+      try {
+        const apiKey = "4b3995ed2fc943eb87623413251010"; // Your key
+        const res = await fetch(
+          `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}`
+        );
+        const data = await res.json();
+
+        // Error handling from API response
+        if (data.error) {
+          show.innerHTML = `❌ Error: ${data.error.message}`;
+          return;
+        }
+
+        // Display data
+        show.innerHTML = `
+          <h3>${data.location.name}, ${data.location.country}</h3>
+          🌡️ Temp: ${data.current.temp_c}°C <br>
+          ☁️ Condition: ${data.current.condition.text} <br>
+          💨 Wind: ${data.current.wind_kph} km/h <br>
+          🕒 Local Time: ${data.location.localtime}
+        `;
+      } catch (error) {
+        show.innerHTML = `❌ Something went wrong: ${error}`;
+      } finally {
+        console.log("Request completed ✅");
+      }
+    }
+  </script>
+</body>
+</html>
