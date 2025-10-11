@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 🌿 What Is DOM Traversal?
+
+DOM traversal means navigating through HTML elements using JavaScript — like moving up (to parent), down (to children), or sideways (to siblings).
+
+🧩 1. parentNode
+
+➡️ Moves upward in the DOM tree — gives you the immediate parent of an element. -->
+<div class="parent">
+  <p id="child">Hello</p>
+</div>
+
+<!-- 🧩 2. children -->
+
+<!-- ➡️ Moves downward — gives all direct child elements of a node (as an HTMLCollection). -->
+<div id="container">
+  <p>First</p>
+  <p>Second</p>
+  <p>Third</p>
+</div>
+
+<!-- 🧩 3. closest(selector)
+
+➡️ Finds the nearest ancestor (including itself) that matches the given CSS selector. -->
+<div class="card">
+  <div class="content">
+    <button id="btn">Click Me</button>
+  </div>
+</div>
+
+
+<script>
+    let child =document.getElementById("child");
+    console.log(child.parentNode);
+    let div =document.getElementById("container")
+    console.log(div.children);
+    console.log(div.children[1])
+
+    let btn =document.getElementById("btn");
+    let card =btn.closest(".card")
+    console.log(card)
+</script>
+</body>
+</html>
