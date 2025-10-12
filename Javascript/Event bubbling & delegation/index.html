@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 1️⃣ Event Bubbling
+
+When an event occurs on a child element, it bubbles up (moves upward) to its parent, grandparent, and so on.
+
+Example: A click on a <button> inside a <div> first triggers the button’s handler, then the div’s handler, then body, etc. -->
+    <div>
+      <button>click me</button>
+    </div>
+
+    <!-- for 3 below-->
+     <ul>
+
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+     </ul>
+    <script>
+      document.querySelector("div").addEventListener("click",() =>{
+      console.log("Div clicked");
+      });
+      document.querySelector("button").addEventListener("click", () =>{
+          console.log("button clicked")
+      });
+      // Button clicked!
+      // Div clicked!
+
+      // 2️⃣ Stop Bubbling
+
+      // To stop the event from moving upward (prevent bubbling):
+      
+
+    //   3️⃣ Event Delegation
+
+    //   A technique where you attach one event listener to a parent element, instead of each child.
+
+    //   When an event happens on a child, it bubbles up to the parent, which checks which child triggered it.
+document.querySelector("ul").addEventListener("click", function(e) {
+  if (e.target.tagName === "LI") {
+    console.log("Clicked:", e.target.textContent);
+  }
+});
+
+    </script>
+  </body>
+</html>

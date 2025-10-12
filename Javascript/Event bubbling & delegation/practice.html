@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="outer">
+  <div class="inner">
+    <button>Click Me</button>
+  </div>
+</div>
+<script>
+    document.querySelector("button").addEventListener("click",()=>{
+        console.log("Button clicked");
+    });
+    document.querySelector("div").addEventListener("click",() =>{
+        console.log("Inner clicked")
+    });
+    document.querySelector("div").addEventListener("click",() =>{
+        console.log("Outer clicked")
+    })
+</script>
+</body>
+</html>

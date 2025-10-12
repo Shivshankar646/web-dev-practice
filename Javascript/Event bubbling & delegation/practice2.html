@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container"></div>
+<button id="add">Add Button</button>
+<script>
+  
+    let btn =document.getElementById("add");
+        let count =0;
+        btn.onclick =function (){
+            count++;
+            let button =  document.createElement("button");
+            
+            button.innerHTML=`button${count}<br>`
+            let container =   document.getElementById("container")
+            container.appendChild(button);
+            let br =document.createElement("br")
+            container.appendChild(br)
+            
+        }
+            document.querySelector("div").addEventListener("click",function(e){
+        if (e.target.tagName === "BUTTON") {
+            console.log("clicked button:",e.target.textContent)
+        }
+    })
+</script>
+</body>
+</html>
