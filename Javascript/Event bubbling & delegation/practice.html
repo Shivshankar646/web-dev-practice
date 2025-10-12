@@ -15,12 +15,13 @@
     document.querySelector("button").addEventListener("click",()=>{
         console.log("Button clicked");
     });
-    document.querySelector("div").addEventListener("click",() =>{
-        console.log("Inner clicked")
-    });
-    document.querySelector("div").addEventListener("click",() =>{
-        console.log("Outer clicked")
-    })
+  document.querySelector(".inner").addEventListener("click", () => {
+  console.log("Inner clicked");
+});
+document.querySelector(".outer").addEventListener("click", () => {
+  console.log("Outer clicked");
+});
+
 </script>
 </body>
 </html>
