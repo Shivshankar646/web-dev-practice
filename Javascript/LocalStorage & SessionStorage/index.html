@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 🧪 Example — LocalStorage
+
+        localStorage.setItem("name","shivshankar");
+        let user =localStorage.getItem("name");
+        console.log(user);
+        localStorage.removeItem("name");
+        localStorage.clear();
+        user =localStorage.getItem("name")
+        console.log(user);
+
+        // 🧪 Example — SessionStorage
+//         sessionStorage.setItem("city","nanded");
+//         let city =sessionStorage.getItem("city")
+//         console.log(city);
+
+//       let user = { name: "Shiv", age: 21 };
+// localStorage.setItem("user", JSON.stringify(user));
+
+// let getUser = JSON.parse(localStorage.getItem("user"));
+// console.log(getUser.name); // Shiv
+
+    </script>
+</body>
+</html>
