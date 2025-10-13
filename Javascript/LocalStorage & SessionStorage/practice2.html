@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SessionStorage Form</title>
+</head>
+<body>
+  <form id="myform">
+    <label for="username">Name:</label>
+    <input type="text" placeholder="Enter a name" name="username" required> <br><br>
+
+    <label for="useremail">Email:</label>
+    <input type="email" placeholder="Enter your email" name="useremail" required> <br><br>
+
+    <input type="submit" value="Save">
+  </form>
+
+  <p id="show"></p>
+
+  <script>
+    const form = document.getElementById("myform");
+    const show = document.getElementById("show");
+
+    form.addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+      const name = formData.get("username");
+      const email = formData.get("useremail");
+
+      // Store in sessionStorage
+      sessionStorage.setItem("username", name);
+      sessionStorage.setItem("useremail", email);
+
+      // Show on screen
+      show.innerHTML = `Name: ${name} <br>Email: ${email}`;
+    });
+
+    // Display stored data when page reloads (if present)
+    const savedName = sessionStorage.getItem("username");
+    const savedEmail = sessionStorage.getItem("useremail");
+
+    if (savedName && savedEmail) {
+      show.innerHTML = `Name: ${savedName} <br>Email: ${savedEmail}`;
+    }
+  </script>
+</body>
+</html>
