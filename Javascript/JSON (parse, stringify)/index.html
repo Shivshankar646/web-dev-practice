@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // ⚡ Task – Convert, Store & Retrieve Object Using JSON.
+let users ={name:"shiv",age:22,city:"nanded"};
+console.log("original object:",users)
+let jdata=JSON.stringify(users);
+console.log("Json string:",jdata)
+localStorage.setItem("data",jdata);
+let getdata =localStorage.getItem("data");
+let finalobj=JSON.parse(getdata);
+console.log(`after parsing:${finalobj.name}from ${finalobj.city}`)
+    </script>
+</body>
+</html>
