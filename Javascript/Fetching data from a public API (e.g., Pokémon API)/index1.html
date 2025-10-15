@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joking API</title>
+</head>
+<body>
+    <h2>Here you see API response</h2>
+    <button id="getresponse">Get Response</button>
+    <p id="output"></p>
+    <button id="again">Try Again</button>
+
+    <script>
+        const getBtn = document.getElementById("getresponse");
+        const againBtn = document.getElementById("again");
+        const output = document.getElementById("output");
+
+        // Initially disable "Try Again"
+        againBtn.disabled = true;
+
+        // Attach listener once for "Get Response"
+        getBtn.addEventListener("click", fetchdata);
+
+        // Attach listener once for "Try Again"
+        againBtn.addEventListener("click", fetchdata);
+
+        function fetchdata() {
+            // Disable both buttons while fetching
+            getBtn.disabled = true;
+            againBtn.disabled = true;
+
+            fetch('https://official-joke-api.appspot.com/random_joke')
+                .then(res => res.json())
+                .then(data => {
+                    setTimeout(() => {
+                        output.innerHTML = `Fetching joke…`;
+
+                        setTimeout(() => {
+                            output.innerHTML = `<strong>Type:</strong> ${data.setup} <br>`;
+
+                            setTimeout(() => {
+                                output.innerHTML = `<strong>Punchline:</strong> ${data.punchline} <br>`;
+
+                                setTimeout(() => {
+                                    output.innerHTML = `
+                                        <strong>Type:</strong> ${data.type} <br>
+                                        <strong>Setup:</strong> ${data.setup} <br>
+                                        <strong>Punchline:</strong> ${data.punchline} <br>
+                                        <strong>ID:</strong> ${data.id} <br>
+                                    `;
+
+                                    // Enable only the "Try Again" button
+                                    getBtn.disabled = true;
+                                    againBtn.disabled = false;
+
+                                }, 1000);
+                            }, 2000);
+                        }, 3000);
+                    }, 1000);
+                })
+                .catch(err => {
+                    output.innerHTML = `Error fetching joke: ${err}`;
+                    // Re-enable "Try Again" even if error occurs
+                    getBtn.disabled = true;
+                    againBtn.disabled = false;
+                });
+        }
+    </script>
+</body>
+</html>

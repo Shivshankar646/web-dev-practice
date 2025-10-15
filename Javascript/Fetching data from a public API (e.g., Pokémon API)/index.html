@@ -1,0 +1,30 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pokémon API Example</title>
+</head>
+<body>
+  <h2>Pokémon Info</h2>
+  <button id="load">Get Pokémon Data</button>
+  <p id="output"></p>
+
+  <script>
+    document.getElementById("load").addEventListener("click", () => {
+      fetch("https://pokeapi.co/api/v2/pokemon/pikachu")
+        .then(response => response.json()) // Convert response to JSON
+        .then(data => {
+          console.log(data); // Full data in console
+          document.getElementById("output").innerHTML = `
+            <strong>Name:</strong> ${data.name}<br>
+            <strong>Height:</strong> ${data.height}<br>
+            <strong>Weight:</strong> ${data.weight}<br>
+            <img src="${data.sprites.front_default}" alt="${data.name}">
+          `;
+        })
+        .catch(error => console.log("Error fetching data:", error));
+    });
+  </script>
+</body>
+</html>
