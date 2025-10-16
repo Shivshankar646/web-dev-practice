@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Movie Search App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      text-align: center;
+      padding: 20px;
+    }
+    input {
+      padding: 10px;
+      width: 250px;
+      border-radius: 8px;
+      border: 1px solid #aaa;
+      outline: none;
+    }
+    button {
+      padding: 10px 20px;
+      margin-left: 10px;
+      border: none;
+      border-radius: 8px;
+      background-color: #4caf50;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    .movie {
+      background-color: white;
+      margin-top: 20px;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      display: inline-block;
+    }
+    img {
+      width: 200px;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎬 Movie Search App</h1>
+  <input type="text" id="movieInput" placeholder="Enter movie name..." />
+  <button id="searchBtn">Search</button>
+
+  <div id="result"></div>
+
+  <script>
+    const searchBtn = document.getElementById("searchBtn");
+    const movieInput = document.getElementById("movieInput");
+    const result = document.getElementById("result");
+
+    // Replace YOUR_API_KEY with your actual OMDb API key
+    const API_KEY = "19356e";
+
+    searchBtn.addEventListener("click", fetchMovie);
+
+    function fetchMovie() {
+      const movieName = movieInput.value.trim();
+      if (!movieName) {
+        result.innerHTML = "<p>Please enter a movie name!</p>";
+        return;
+      }
+
+      result.innerHTML = "<p>Loading...</p>";
+
+      fetch(`https://www.omdbapi.com/?t=${movieName}&apikey=${API_KEY}`)
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.Response === "False") {
+            result.innerHTML = `<p>❌ Movie not found!</p>`;
+            return;
+          }
+
+          result.innerHTML = `
+            <div class="movie">
+              <h2>${data.Title}</h2>
+              <p><strong>Year:</strong> ${data.Year}</p>
+              <p><strong>Genre:</strong> ${data.Genre}</p>
+              <p><strong>IMDB Rating:</strong> ${data.imdbRating}</p>
+              <img src="${data.Poster}" alt="${data.Title}">
+            </div>
+          `;
+        })
+        .catch((err) => {
+          result.innerHTML = "<p>Error fetching data. Try again later.</p>";
+          console.log(err);
+        });
+    }
+  </script>
+</body>
+</html>
