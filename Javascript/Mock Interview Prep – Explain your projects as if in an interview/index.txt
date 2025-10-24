@@ -1,0 +1,110 @@
+📝 1. To-Do List App
+
+What it does:
+
+A simple web app to add, edit, and delete daily tasks.
+
+Tech used:
+
+HTML, CSS, and JavaScript (DOM manipulation + Local Storage).
+
+How you built it:
+
+I used JavaScript to dynamically add list items when the user enters a task and clicks “Add.”
+Tasks are stored in LocalStorage so they stay even after refreshing.
+
+What you learned:
+
+How to manipulate the DOM, handle user input, and manage data using LocalStorage.
+
+🧮 2. Calculator App
+
+What it does:
+
+A functional calculator that performs basic arithmetic operations.
+
+Tech used:
+
+HTML for buttons & layout, CSS for design, and JavaScript for logic.
+
+How you built it:
+
+Each button triggers a JavaScript function that updates the display and calculates the result using the eval() function (or manual logic).
+
+What you learned:
+
+Handling button clicks, working with strings/numbers, and building UI interactions.
+
+❓ 3. Quiz App
+
+What it does:
+
+A multiple-choice quiz that shows score at the end.
+
+Tech used:
+
+HTML, CSS, and JavaScript.
+
+How you built it:
+
+I used an array of questions and options, displayed one at a time, and tracked score based on correct answers.
+
+What you learned:
+
+Working with arrays, objects, and event handling.
+
+🎬 4. Movie Search App
+
+What it does:
+
+Fetches and displays movie data from a public API (OMDb API).
+
+Tech used:
+
+HTML, CSS, and JavaScript (Fetch API + async/await).
+
+How you built it:
+
+When a user types a movie name and clicks “Search,” it fetches data using the API and displays results dynamically.
+
+What you learned:
+
+Using Fetch API, handling promises, and displaying live API data on a webpage.
+
+🌦️ 5. Weather App
+
+What it does:
+
+Shows real-time weather of any city entered by the user.
+
+Tech used:
+
+HTML, CSS, JavaScript, and OpenWeather API.
+
+How you built it:
+
+I used fetch() to get weather data and displayed temperature, humidity, and condition dynamically on the page.
+
+What you learned:
+
+Working with APIs, async/await, and JSON data handling.
+
+📊 6. Student Marks Analyzer
+
+What it does:
+
+Takes students’ marks and calculates average and top scorer using reduce().
+
+Tech used:
+
+Pure JavaScript with array methods like map, reduce, and filter.
+
+What you learned:
+
+Using higher-order functions for calculations and data analysis.
+
+💻 7. JavaScript Basics Folder
+
+What it contains:
+
+Practice files for learning core JS concepts — ES6 syntax, loops, functions, promises, async/await, and DOM.
