@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tailwind Setup Test</title>
+    <link rel="stylesheet" href="./output.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <p class="text-sm md:text-lg lg:text-2xl">Responsive text</p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div class="bg-blue-300 p-4">Box 1</div>
+      <div class="bg-red-300 p-4">Box 2</div>
+      <div class="bg-green-300 p-4">Box 3</div>
+    </div>
+    <p class="hidden md:block bg-blue-300 m-4 p-4 text-center lg:hidden">
+      Visible only on tablet & larger
+    </p>
+    <div class="flex flex-col text-center md:flex-row gap-4 m-4">
+      <div class="bg-pink-300 p-4">Box 1</div>
+      <div class="bg-orange-300 p-4">Box 2</div>
+      <div class="bg-blue-300 p-4">Box 3</div>
+      <div class="bg-red-300 p-4">Box 4</div>
+      <div class="bg-green-300 p-4">Box 5</div>
+    </div>
+    <div class="flex justify-between bg-blue-100 p-4">
+      <span>Logo</span>
+      <div class="flex gap-4">
+        <div>Home</div>
+        <div>About</div>
+        <div>Contact</div>
+      </div>
+    </div>
+   <section class="grid grid-cols-1 md:grid-cols-2 gap-4 p-4">
+  <div>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. A magnam
+      perferendis, aspernatur totam ullam minima saepe unde voluptates velit
+      fugiat fugit, neque quae harum excepturi.
+    </p>
+  </div>
+  <div>
+    <img
+      src="https://thewowstyle.com/wp-content/uploads/2015/01/nature-images..jpg"
+      alt="testing image"
+      class="w-full rounded-lg"
+    />
+  </div>
+</section>
+<div class="grid text-center grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+  <div class="p-4 m-4 bg-blue-100">Box 1</div>
+  <div class="p-4 m-4 bg-blue-100">Box 2</div>
+  <div class="p-4 m-4 bg-blue-100">Box 3</div>
+  <div class="p-4 m-4 bg-blue-100">Box 4</div>
+</div>
+<<div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-4 p-4">
+  <div class="border-4 border-indigo-500 rounded-xl p-4 bg-blue-50">
+    <img src="https://thewowstyle.com/wp-content/uploads/2015/01/nature-images..jpg" alt="first image" class="rounded-lg mb-2 w-full h-48 object-cover">
+    <h1 class="text-2xl font-semibold mb-2">This is first card</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis obcaecati laudantium aperiam.</p>
+  </div>
+
+  <div class="border-4 border-green-500 rounded-xl p-4 bg-green-50">
+    <img src="https://my.alfred.edu/zoom/_images/foster-lake.jpg" alt="second image" class="rounded-lg mb-2 w-full h-48 object-cover">
+    <h1 class="text-2xl font-semibold mb-2">This is my second card</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam ipsam reiciendis neque quisquam vel!</p>
+  </div>
+
+  <div class="border-4 border-pink-500 rounded-xl p-4 bg-pink-50">
+    <img src="https://www.pixelstalk.net/wp-content/uploads/2016/07/Download-Free-Pictures-3840x2160.jpg" alt="third image" class="rounded-lg mb-2 w-full h-48 object-cover">
+    <h1 class="text-2xl font-semibold mb-2">This is my third card</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, inventore officia esse aperiam!</p>
+  </div>
+</div>
+
+
+  </body>
+</html>
