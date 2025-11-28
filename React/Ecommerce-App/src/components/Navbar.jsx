@@ -1,23 +1,25 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
-const Navbar = () => {
+function Navbar() {
   return (
-    <div>
-      <nav>
-  <h1>MyStore</h1>
-  <ul>
+    <nav className="bg-gray-900 text-white px-6 py-4">
+      <div className="max-w-6xl mx-auto flex justify-between items-center">
+        
+        {/* Logo */}
+        <Link to="/" className="text-xl font-bold">
+          MyStore
+        </Link>
 
-   <li><Link to='/'>Home</Link></li>
-   <li><Link to='/collection'>Collection</Link></li>
-   <li><Link to='/about'>About</Link></li>
-   <li><Link to='/contact'>Contact</Link></li>
-   
-  </ul>
-</nav>
+        {/* Navbar Links */}
+        <ul className="flex gap-6">
+          <li><Link to="/" className="hover:text-yellow-400">Home</Link></li>
+          <li><Link to="/products" className="hover:text-yellow-400">Products</Link></li>
+          <li><Link to="/cart" className="hover:text-yellow-400">Cart</Link></li>
+        </ul>
 
-    </div>
-  )
+      </div>
+    </nav>
+  );
 }
 
-export default Navbar
+export default Navbar;

@@ -10,6 +10,7 @@ import Login from './pages/Login';
 import Orders from './pages/Orders';
 import PlaceOrder from './pages/PlaceOrder';
 import Products from './pages/Products';
+import ProductDetails from './pages/ProductDetails';
 
 
 
@@ -18,16 +19,18 @@ const App = () => {
 <BrowserRouter>
 <Navbar/>
 <Routes>
-<Route path='/' element={<Home/>} />
-<Route path='/about' element={<About/>} />
-<Route path='/cart' element={<Cart/>} />
-<Route path='/collection' element={<Collection/>} />
-<Route path='/contact' element={<Contact/>} />
-<Route path='/login' element={<Login/>} />
-<Route path='/orders' element={<Orders/>} />
-<Route path='/placeorder' element={<PlaceOrder/>} />
-<Route path='/products/:id' element={<Products/>} />
+  <Route path='/' element={<Home/>} />
+  <Route path='/about' element={<About/>} />
+  <Route path='/cart' element={<Cart/>} />
+  <Route path='/collection' element={<Collection/>} />
+  <Route path='/contact' element={<Contact/>} />
+  <Route path='/login' element={<Login/>} />
+  <Route path='/orders' element={<Orders/>} />
+  <Route path='/placeorder' element={<PlaceOrder/>} />
+  <Route path='/products' element={<Products/>} />
+  <Route path='/products/:id' element={<ProductDetails/>} />
 </Routes>
+
 </BrowserRouter>
 
   
