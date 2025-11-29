@@ -11,11 +11,14 @@ import Orders from './pages/Orders';
 import PlaceOrder from './pages/PlaceOrder';
 import Products from './pages/Products';
 import ProductDetails from './pages/ProductDetails';
+import { CartProvider } from "./context/CartContext";
 
 
 
 const App = () => {
   return (
+    <CartProvider>
+
 <BrowserRouter>
 <Navbar/>
 <Routes>
@@ -32,6 +35,7 @@ const App = () => {
 </Routes>
 
 </BrowserRouter>
+ </CartProvider>
 
   
   )

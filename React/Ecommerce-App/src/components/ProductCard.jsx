@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
 
 function ProductCard({ product }) {
+   if (!product) {
+    return <h2 className="p-4 text-xl font-bold">Loading...</h2>;
+  }
   return (
     <Link to={`/products/${product.id}`}>
       <div className="border p-4 rounded-lg shadow-sm hover:shadow-md transition">
