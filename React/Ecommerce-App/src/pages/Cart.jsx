@@ -1,8 +1,15 @@
 import { useContext } from "react";
 import { CartContext } from "../context/CartContext";
 
+
 function Cart() {
-  const { cart } = useContext(CartContext);
+ 
+  const { cart, setCart } = useContext(CartContext);
+
+  function removeFromCart(id) {
+  setCart(cart.filter(item => item.id !== id));
+}
+
 
   return (
     <div className="p-4">
@@ -12,15 +19,28 @@ function Cart() {
         <p>Your cart is empty</p>
       ) : (
         cart.map((item, index) => (
-          <div key={index} className="flex items-center gap-4 mb-4 border p-3 rounded">
-            <img src={item.image} alt={item.title} className="h-20 w-20 object-contain" />
-            <div>
-              <h3 className="font-semibold">{item.title}</h3>
-              <p className="text-green-600 font-bold">${item.price}</p>
-            </div>
-          </div>
+        <div key={index} className="flex items-center justify-between mb-4 border p-3 rounded">
+  <div className="flex items-center gap-4">
+    <img src={item.image} alt={item.title} className="h-20 w-20 object-contain" />
+    <div>
+      <h3 className="font-semibold">{item.title}</h3>
+      <p className="text-green-600 font-bold">${item.price}</p>
+      <p>Qty: {item.quantity}</p>
+    </div>
+  </div>
+
+  <button
+    onClick={() => removeFromCart(item.id)}
+    className="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-700"
+  >
+    Remove
+  </button>
+</div>
+
+          
         ))
       )}
+      
     </div>
   );
 }

@@ -4,14 +4,21 @@ import { data } from "react-router-dom";
 
 function Products() {
   const [products, setProducts] = useState([]);
+const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    fetch("https://fakestoreapi.com/products")
-      .then(res => res.json())
-      .then(data => setProducts(data));// data is already an array
-  }, []);
+useEffect(() => {
+  fetch("https://fakestoreapi.com/products")
+    .then(res => res.json())
+    .then(data => {
+      setProducts(data);
+      setLoading(false);
+    });
+}, []);
 
-  
+if (loading) {
+  return <h2 className="p-4 text-xl font-bold">Loading...</h2>;
+}
+
   return (
     <div className="p-4">
       <h2 className="text-2xl font-bold mb-4">Products</h2>
