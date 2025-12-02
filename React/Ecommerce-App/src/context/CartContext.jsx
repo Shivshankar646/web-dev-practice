@@ -6,6 +6,18 @@ export const CartContext = createContext();
 export function CartProvider({ children }) {
   const [cart, setCart] = useState([]);
   const [products, setProducts] = useState([]);
+  const [wishlist, setWishlist] = useState([]);
+
+function toggleWishlist(product) {
+  const exist = wishlist.find(item => item.id === product.id);
+
+  if (exist) {
+    setWishlist(prev => prev.filter(item => item.id !== product.id)); // remove
+  } else {
+    setWishlist(prev => [...prev, product]); // add
+  }
+}
+
 
 
   function addToCart(product) {
@@ -56,10 +68,11 @@ useEffect(() => {
 
 
   return (
-   <CartContext.Provider value={{
+ <CartContext.Provider value={{
   cart, setCart, addToCart, increaseQuantity, decreaseQuantity, removeFromCart,
-  products
+  products, wishlist, toggleWishlist
 }}>
+
 
       {children}
     </CartContext.Provider>

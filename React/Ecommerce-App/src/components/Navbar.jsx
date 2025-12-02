@@ -6,7 +6,7 @@ import cartIcon from '../assets/cart_icon.png';
 
 
 function Navbar() {
-  const { cart } = useContext(CartContext);
+  const { cart,wishlist } = useContext(CartContext);
 
   return (
     <nav className="bg-gray-900 text-white px-6 py-4">
@@ -17,6 +17,8 @@ function Navbar() {
         <ul className="flex gap-6">
           <li><Link to="/" className="hover:text-yellow-400">Home</Link></li>
           <li><Link to="/products" className="hover:text-yellow-400">Products</Link></li>
+         <li><Link to="/wishlist">Wishlist ({wishlist.length}) ❤️</Link></li>
+
          <li className="relative">
   <Link to="/cart" className="flex items-center">
     <div className="relative">

@@ -12,6 +12,8 @@ import PlaceOrder from './pages/PlaceOrder';
 import Products from './pages/Products';
 import ProductDetails from './pages/ProductDetails';
 import { CartProvider } from "./context/CartContext";
+import Wishlist from "./pages/Wishlist";
+
 
 
 
@@ -32,6 +34,8 @@ const App = () => {
   <Route path='/placeorder' element={<PlaceOrder/>} />
   <Route path='/products' element={<Products/>} />
   <Route path='/products/:id' element={<ProductDetails/>} />
+  <Route path="/wishlist" element={<Wishlist />} />
+
 </Routes>
 
 </BrowserRouter>
