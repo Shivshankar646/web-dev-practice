@@ -1,9 +1,12 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect } from "react";
+
 
 export const CartContext = createContext();
 
 export function CartProvider({ children }) {
   const [cart, setCart] = useState([]);
+  const [products, setProducts] = useState([]);
+
 
   function addToCart(product) {
     const exist = cart.find(item => item.id === product.id);
@@ -44,9 +47,19 @@ export function CartProvider({ children }) {
   setCart(prev => prev.filter(item => item.id !== id));
 }
 
+useEffect(() => {
+  fetch("https://fakestoreapi.com/products")
+    .then(res => res.json())
+    .then(data => setProducts(data));
+}, []);
+
+
 
   return (
-    <CartContext.Provider value={{ cart, setCart, addToCart, increaseQuantity, decreaseQuantity, removeFromCart }}>
+   <CartContext.Provider value={{
+  cart, setCart, addToCart, increaseQuantity, decreaseQuantity, removeFromCart,
+  products
+}}>
 
       {children}
     </CartContext.Provider>
