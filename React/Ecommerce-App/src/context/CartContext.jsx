@@ -65,12 +65,15 @@ useEffect(() => {
     .then(data => setProducts(data));
 }, []);
 
+function inWishlist(id) {
+  return wishlist.some(item => item.id === id);
+}
 
 
   return (
  <CartContext.Provider value={{
   cart, setCart, addToCart, increaseQuantity, decreaseQuantity, removeFromCart,
-  products, wishlist, toggleWishlist
+  products, wishlist, toggleWishlist,inWishlist
 }}>
 
 

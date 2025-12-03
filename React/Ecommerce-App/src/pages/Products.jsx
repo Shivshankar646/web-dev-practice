@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { CartContext } from "../context/CartContext";
 import ProductCard from "../components/ProductCard";
+import SkeletonCard from "../components/SkeletonCard";
 
 function Products() {
   const { products } = useContext(CartContext);
@@ -76,10 +77,19 @@ const filteredProducts = products.filter(product => {
 
       <h2 className="text-2xl font-bold mb-4">All Products</h2>
 
-      {products.length === 0 ? (
-        <p>Loading...</p>
-      ) : (
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+     {products.length === 0 ? (
+ <div className="flex justify-center">
+  <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 w-full max-w-6xl">
+    {Array(6).fill().map((_, i) => (
+      <SkeletonCard key={i} />
+    ))}
+  </div>
+</div>
+
+) : (
+
+       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+
           {filteredProducts.map(product => (
             <ProductCard key={product.id} product={product} />
           ))}

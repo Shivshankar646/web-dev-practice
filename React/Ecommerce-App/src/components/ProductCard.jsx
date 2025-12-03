@@ -14,7 +14,7 @@ const inWishlist = wishlist.some(item => item.id === product.id);
 
 
   return (
-   <div className="border rounded-lg p-4 shadow hover:shadow-lg transition flex flex-col relative">
+   <div className="border rounded-lg p-4 shadow-md hover:shadow-xl hover:-translate-y-1 transition cursor-pointer">
       <Link to={`/products/${product.id}`} className="flex-1">
         <img
           src={product.image}
