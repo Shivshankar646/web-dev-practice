@@ -41,13 +41,13 @@ app.put('/notes/:id', async (req, res) => {
         { new: true }
     );
 
-    res.json({ message: "Note Updated", updatedNote });
+    res.json({ message: "Note Updated here", updatedNote });
 });
 
 
 app.delete('/notes/:id', async (req, res) => {
     await Note.findByIdAndDelete(req.params.id);
-    res.json({ message: "Note Deleted" });
+    res.json({ message: "Note Deleted here" });
 });
 
 
