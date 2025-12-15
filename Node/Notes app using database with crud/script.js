@@ -40,8 +40,8 @@ async function addNote() {
 function editNote(id, title, content) {
   editId = id;
   console.log(editId)
-  document.getElementById("editTitle").value = title;
-  document.getElementById("editContent").value = content;
+  document.getElementById("editTitle").value = title ;
+  document.getElementById("editContent").value = content ;
 }
 
 // UPDATE NOTE
