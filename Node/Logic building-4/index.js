@@ -17,7 +17,7 @@ return [newnote,...notes]
 function updateNote(notes, id, newTitle) {
 return notes.map(note => note.id === id ? {...note,id,newTitle} : note)
 };
-console.log(updateNote(notes,1,"i am god in coding"))
+console.log(updateNote(notes,1,"i am god in coding and i know it"))
 
 function deleteNote(notes, id) {
 return notes.filter(note => note.id !== id);
