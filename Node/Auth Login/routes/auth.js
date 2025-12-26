@@ -29,8 +29,15 @@ router.post('/register', async (req, res) => {
 });
 
 router.get('/users', async (req, res) => {
-  const users = await User.find().select('-password');
-  res.json(users);
+try {
+  if (!req.query.name) {
+    return res.status(400).json({message:"Name required"})
+  }
+  const user = await User.find().select('password');
+  res.json(user);
+} catch (error) {
+  res.status(500).json({message:error.message });
+}
 });
 
 
