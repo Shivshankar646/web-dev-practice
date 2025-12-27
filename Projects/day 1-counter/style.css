@@ -1,0 +1,37 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    color: white;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#display{
+    background-color: red;
+    width: 30vw;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    font-size: xxx-large;
+    
+}
+button{
+    margin-top: 20px;
+    width: 60px;
+    background-color: rgb(76, 88, 88);
+    color: white;
+    padding: 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 5cap;
+    
+}
+button:hover{
+    background-color: rgb(0, 255, 255);
+    color: black;
+    box-shadow: 10cap;
+
+}
