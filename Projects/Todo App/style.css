@@ -1,26 +1,28 @@
+li button{
+    margin-left: 8px;
+}
 .done{
     background-color: red;
     color: white;
 }
-li button{
-    margin-left: 8px;
-}
 body{
     margin: 0px;
     padding: 0px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     background-color: black;
     color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+
 }
 input{
     padding: 20px;
     border-radius: 20px;
     background-color: aquamarine;
+    color: white;
     font-size: xx-large;
-    
 }
 button{
     padding: 10px;

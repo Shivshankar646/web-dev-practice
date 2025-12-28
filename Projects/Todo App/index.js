@@ -1,46 +1,44 @@
 let arr = [];
-document.getElementById("add").addEventListener("click",(e)=>{
-    const userinput =document.getElementById("todo");
-    arr.push({id: Date.now(),text:userinput.value,done:false});
-    userinput.value= "";
-    render()
-   
+let add = document.getElementById("add");
+add.addEventListener("click",(e)=>{
+let userinput = document.getElementById("userinput");
+if (!userinput.value.trim()) return;
+
+arr.push({id:Date.now(),text:userinput.value,done:false});
+userinput.value = "";
+render();
 });
 
-function render() {
-  const display = document.getElementById("display");
-  display.innerHTML = "";
+function render(){
+    let display = document.getElementById("display");
+    display.innerHTML = "";
+    arr.forEach((item,index)=>{
+          let li = document.createElement("li");
+    let done = document.createElement("button");
+    let deletebtn = document.createElement("button");
+      li.innerText = item.text + "";
+      done.innerText = "Done";
+      deletebtn.innerText = "Delete";
 
-  arr.forEach((item, index) => {
-    const li = document.createElement("li");
-    const done = document.createElement("button");
-    const btn = document.createElement("button")
+        deletebtn.dataset.id =item.id;
 
-    done.innerText = "Done";
-    btn.innerText = "Delete"
-    btn.dataset.id=item.id;
+      if (item.done) {
+    done.classList.add("done");
+}
+done.addEventListener("click",()=>{
+arr[index].done =!arr[index].done;
+render();
+});
 
-    // ✅ restore color
-    if (item.done) {
-      done.classList.add("done");
-    }
+deletebtn.addEventListener("click",(e) =>{
+    const id =Number(e.target.dataset.id);
+    arr = arr.filter(item => item.id !== id);
+    render();
+})
 
-    // ✅ toggle color + data
-    done.addEventListener("click", () => {
-      arr[index].done = !arr[index].done;
-      render();
+      li.appendChild(done);
+      li.appendChild(document.createTextNode(""));
+      li.appendChild(deletebtn);
+      display.appendChild(li);
     });
-    btn.addEventListener("click",(e) =>{
-       
-        const id  =Number(e.target.dataset.id)
-     arr = arr.filter(item => item.id !== id);
-        render();
-    })
-
-    li.innerText = item.text + " ";
-    li.appendChild(btn);
-    li.appendChild(document.createTextNode(""));
-    li.appendChild(done);
-    display.appendChild(li);
-  });
 }
