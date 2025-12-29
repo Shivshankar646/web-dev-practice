@@ -1,0 +1,36 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.done{
+    background-color: rgb(219, 212, 212);
+    color: white;
+}
+ul li{
+margin-left: 18px;
+font-size:xx-large;
+}
+button{
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgb(124, 86, 37);
+    color: white;
+    cursor: pointer;
+}
+button:hover{
+    background-color: rgb(255, 145, 0);
+    color: black;
+}
+input{
+    width: 50vh;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 20px;
+}
