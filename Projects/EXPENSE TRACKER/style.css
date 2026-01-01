@@ -11,3 +11,8 @@ select{
     
 
 }
+#add{
+    cursor: pointer;
+}
+.income { color: green; }
+.expense { color: red; }
