@@ -57,7 +57,6 @@ display.appendChild(li)
 
 function totalcalculator() {
   let Total = document.getElementById("Total");
-console.log(arr)
   let balance = arr.reduce((sum, item) => {
     if (item.type === "income") {
       return sum + Number(item.amount);
