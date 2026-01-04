@@ -1,12 +1,16 @@
 import React from 'react';
-import ExpenseForm from './ExpenseForm';
 
-const ExpenseList = () => {
+const ExpenseList = ({expenses}) => {
+  
   return (
-    <div>
-      
-    </div>
-  )
+   <ul>
+    {expenses.map((item) => (
+      <li key={item.id}>
+        {item.title} - {item.amount} - {item.type}
+      </li>
+    ))}
+   </ul>
+  );
 }
 
 export default ExpenseList

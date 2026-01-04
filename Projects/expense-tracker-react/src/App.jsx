@@ -4,7 +4,6 @@ import ExpenseList from "./components/ExpenseList";
 
 function App() {
   const [expenses, setExpenses] = useState([]);
-
   function addExpense(expense) {
     setExpenses((prev) => [...prev, expense]);
   }
