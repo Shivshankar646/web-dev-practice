@@ -11,7 +11,7 @@ function ExpenseForm({ onAddExpense }) {
       title: text,
       amount: Number(amount),
       type: type,
-      done:false,
+      done:true,
     });
 
     setText("");
