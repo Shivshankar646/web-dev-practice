@@ -11,7 +11,7 @@ function ExpenseForm({ onAddExpense }) {
       title: text,
       amount: Number(amount),
       type: type,
-      done:true,
+      done:false,
     });
 
     setText("");
@@ -40,7 +40,7 @@ function ExpenseForm({ onAddExpense }) {
         <option value="expense">Expense</option>
       </select>
 
-      <button onClick={add}>ADD</button>
+      <button onClick={add} disabled={text === "" || amount === "" || type === "" ? true : false}>ADD</button>
     </div>
   );
 }

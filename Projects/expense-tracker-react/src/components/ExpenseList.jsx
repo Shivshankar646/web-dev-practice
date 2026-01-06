@@ -1,9 +1,9 @@
 const ExpenseList = ({ expenses, onToggleDone,onToggleDelete }) => {
   return (
-    <ul>
+    <ol>
       {expenses.map((item) => (
         <li key={item.id}>
-          {item.title} - {item.amount} - {item.type}
+          {item.title} - ₹{item.amount} - {item.type}
 
           <button
             onClick={() => onToggleDone(item.id)}
@@ -17,7 +17,7 @@ const ExpenseList = ({ expenses, onToggleDone,onToggleDelete }) => {
           <button onClick={() => onToggleDelete(item.id)}>Delete</button>
         </li>
       ))}
-    </ul>
+    </ol>
   );
 };
 

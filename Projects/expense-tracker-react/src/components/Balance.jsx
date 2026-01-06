@@ -1,11 +1,7 @@
 import React from 'react'
 
-const Balance = () => {
-  return (
-    <div>
-      here is balance shown
-    </div>
-  )
+function Balance({ amount }) {
+  return <h2 style={{backgroundColor:'red',display:'flex',justifyContent:'center',padding:'20px',borderRadius:'20px',fontSize:'40px'}}>Total Balance: ₹{amount}</h2>;
 }
 
-export default Balance
+export default Balance;
