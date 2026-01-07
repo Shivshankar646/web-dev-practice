@@ -6,17 +6,10 @@ import Balance from "./components/Balance";
 function App() {
   const [expenses, setExpenses] = useState([]);
   function addExpense(expense) {
- 
     setExpenses((prev) => [...prev, expense]);
   }
-function toggleDone(id) {
-  setExpenses(prev =>
-    prev.map(item =>
-      item.id === id
-        ? { ...item, done: !item.done }
-        : item
-    )
-  );
+function toggleDone(id){
+  setExpenses(prev => prev.map(item => item.id === id ? {...item,done:!item.done} : item))
 }
 
 function toggleDelete(id) {
