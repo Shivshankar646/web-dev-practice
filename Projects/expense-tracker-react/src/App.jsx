@@ -2,10 +2,12 @@ import { useState, useEffect } from "react";
 import ExpenseForm from "./components/ExpenseForm";
 import ExpenseList from "./components/ExpenseList";
 import Balance from "./components/Balance";
+import Login from "./components/Login";
 
 function App() {
   const storedvalue = JSON.parse(localStorage.getItem("bhai")) || [];
   const [expenses, setExpenses] = useState(storedvalue);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   function addExpense(expense) {
     setExpenses((prev) => [...prev, expense]);
@@ -35,13 +37,19 @@ function App() {
 
   return (
     <>
-      <Balance amount={balance} />
-      <ExpenseForm onAddExpense={addExpense} />
-      <ExpenseList
-        expenses={expenses}
-        onToggleDone={toggleDone}
-        onToggleDelete={toggleDelete}
-      />
+      {!isLoggedIn ? (
+        <Login onLogin={() => setIsLoggedIn(true)} />
+      ) : (
+        <>
+          <Balance amount={balance} />
+          <ExpenseForm onAddExpense={addExpense} />
+          <ExpenseList
+            expenses={expenses}
+            onToggleDone={toggleDone}
+            onToggleDelete={toggleDelete}
+          />
+        </>
+      )}
     </>
   );
 }
