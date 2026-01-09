@@ -1,4 +1,5 @@
-const ExpenseList = ({ expenses, onToggleDone,onToggleDelete }) => {
+const ExpenseList = ({ expenses, onToggleDone,onToggleDelete,show }) => {
+  console.log(show)
   return (
     <ol>
       {expenses.map((item) => (

@@ -34,13 +34,16 @@ function App() {
       ? total + item.amount
       : total - item.amount;
   }, 0);
-
+function handlelogin(username){
+  console.log(username);
+}
   return (
     <>
       {!isLoggedIn ? (
-        <Login onLogin={() => setIsLoggedIn(true)} />
+        <Login onLogin={() => setIsLoggedIn(true)} getname ={handlelogin} />
       ) : (
         <>
+       
           <Balance amount={balance} />
           <ExpenseForm onAddExpense={addExpense} />
           <ExpenseList

@@ -1,13 +1,17 @@
 import { useState } from "react";
 
-function Login({ onLogin }) {
+function Login({ onLogin,getname }) {
   const [username, setUsername] = useState("");
 
   function handleLogin() {
     if (username.trim() !== "") {
       onLogin();
+      getname(username)
     }
   }
+
+
+  
 
   return (
     <div>
