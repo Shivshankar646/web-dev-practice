@@ -9,7 +9,7 @@ const ExpenseList = ({ expenses, onToggleDone,onToggleDelete,show }) => {
           <button
             onClick={() => onToggleDone(item.id)}
             style={{
-              backgroundColor: item.done ? "green" : "yellow"
+              backgroundColor: item.done ? "green" : "red"
             }}
           >
             Done

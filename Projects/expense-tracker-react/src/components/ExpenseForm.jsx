@@ -1,33 +1,56 @@
 import { useState } from "react";
 
 function ExpenseForm({ onAddExpense }) {
-  const [text, setText] = useState("");
+  const [category, setCategory] = useState("");
+  const [otherCategory, setOtherCategory] = useState("");
   const [amount, setAmount] = useState("");
   const [type, setType] = useState("income");
 
   function add() {
+    const finalTitle =
+      category === "other" ? otherCategory : category;
+
     onAddExpense({
       id: Date.now(),
-      title: text,
+      title: finalTitle,
       amount: Number(amount),
       type: type,
-      done:false,
+      done: false,
     });
 
-    setText("");
+    // reset
+    setCategory("");
+    setOtherCategory("");
     setAmount("");
     setType("income");
   }
 
   return (
     <div>
-      <input
-        type="text"
-        value={text}
-        onChange={(e) => setText(e.target.value)}
-        placeholder="Enter title"
-      />
+      {/* CATEGORY SELECT */}
+      <select
+        value={category}
+        onChange={(e) => setCategory(e.target.value)}
+      >
+        <option value="">-- Select Category --</option>
+        <option value="food">Food</option>
+        <option value="travel">Travel</option>
+        <option value="rent">Rent</option>
+        <option value="shopping">Shopping</option>
+        <option value="other">Other</option>
+      </select>
 
+      {/* OTHER INPUT */}
+      {category === "other" && (
+        <input
+          type="text"
+          placeholder="Enter category"
+          value={otherCategory}
+          onChange={(e) => setOtherCategory(e.target.value)}
+        />
+      )}
+
+      {/* AMOUNT */}
       <input
         type="number"
         value={amount}
@@ -35,12 +58,26 @@ function ExpenseForm({ onAddExpense }) {
         placeholder="Enter amount"
       />
 
-      <select value={type} onChange={(e) => setType(e.target.value)}>
+      {/* TYPE */}
+      <select
+        value={type}
+        onChange={(e) => setType(e.target.value)}
+      >
         <option value="income">Income</option>
         <option value="expense">Expense</option>
       </select>
 
-      <button onClick={add} disabled={text === "" || amount === "" || type === "" ? true : false}>ADD</button>
+      {/* BUTTON */}
+      <button
+        onClick={add}
+        disabled={
+          !category ||
+          !amount ||
+          (category === "other" && !otherCategory)
+        }
+      >
+        ADD
+      </button>
     </div>
   );
 }
