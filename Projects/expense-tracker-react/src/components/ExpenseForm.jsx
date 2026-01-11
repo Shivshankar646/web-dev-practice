@@ -1,4 +1,6 @@
 import { useState } from "react";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 function ExpenseForm({ onAddExpense }) {
   const [category, setCategory] = useState("");
@@ -9,7 +11,6 @@ function ExpenseForm({ onAddExpense }) {
   function add() {
     const finalTitle =
       category === "other" ? otherCategory : category;
-
     onAddExpense({
       id: Date.now(),
       title: finalTitle,
@@ -37,6 +38,7 @@ function ExpenseForm({ onAddExpense }) {
         <option value="travel">Travel</option>
         <option value="rent">Rent</option>
         <option value="shopping">Shopping</option>
+        <option value="sallary">Sallary</option>
         <option value="other">Other</option>
       </select>
 

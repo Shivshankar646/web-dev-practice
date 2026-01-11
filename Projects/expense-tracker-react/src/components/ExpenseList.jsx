@@ -1,5 +1,6 @@
+import DatePicker from "../components/DatePicker";
 const ExpenseList = ({ expenses, onToggleDone,onToggleDelete,show }) => {
-  console.log(show)
+  
   return (
     <ol>
       {expenses.map((item) => (
@@ -16,6 +17,7 @@ const ExpenseList = ({ expenses, onToggleDone,onToggleDelete,show }) => {
           </button>
 
           <button onClick={() => onToggleDelete(item.id)}>Delete</button>
+          <DatePicker/>
         </li>
       ))}
     </ol>
