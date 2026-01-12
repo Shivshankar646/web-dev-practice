@@ -16,8 +16,8 @@ const ExpenseList = ({ expenses, onToggleDone,onToggleDelete,show }) => {
             Done
           </button>
 
-          <button onClick={() => onToggleDelete(item.id)}>Delete</button>
           <DatePicker/>
+          <button onClick={() => onToggleDelete(item.id)}>Delete</button>
         </li>
       ))}
     </ol>
