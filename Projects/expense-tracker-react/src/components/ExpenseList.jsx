@@ -1,14 +1,19 @@
 
-const ExpenseList = ({ expenses, onToggleDone,onToggleDelete,show }) => {
-  function formatDate(date) {
-  return new Date(date).toLocaleDateString("en-IN", {
-    day: "2-digit",
-    month: "short",
-    year: "numeric",
-  });
-}
+const ExpenseList = ({ expenses, onToggleDone, onToggleDelete }) => {
 
-  
+  function formatDate(date) {
+    return new Date(date).toLocaleDateString("en-IN", {
+      day: "2-digit",
+      month: "short",
+      year: "numeric",
+    });
+  }
+
+  // ✅ STEP 1: EMPTY STATE
+  if (expenses.length === 0) {
+    return <p>No expenses added yet</p>;
+  }
+
   return (
     <ol>
       {expenses.map((item) => (
@@ -18,14 +23,15 @@ const ExpenseList = ({ expenses, onToggleDone,onToggleDelete,show }) => {
           <button
             onClick={() => onToggleDone(item.id)}
             style={{
-              backgroundColor: item.done ? "green" : "red"
+              backgroundColor: item.done ? "green" : "red",
             }}
           >
             Done
           </button>
 
-        
-          <button onClick={() => onToggleDelete(item.id)}>Delete</button>
+          <button onClick={() => onToggleDelete(item.id)}>
+            Delete
+          </button>
         </li>
       ))}
     </ol>
