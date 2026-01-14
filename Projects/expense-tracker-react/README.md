@@ -1,23 +1,24 @@
 # React Expense Tracker
 
-A React-based expense tracker with login and local data persistence.
+A React-based expense tracker with frontend-only login and local persistence.
 
 ## Features
-- Frontend-only login
+- Login (frontend-only)
 - Add income & expenses
 - Toggle done status
 - Delete expenses
 - Dynamic balance calculation
+- Empty state handling
 - LocalStorage persistence
 
-## Tech Stack
+## Tech
 - React
 - JavaScript
 - HTML
 - CSS
 
-## Concepts Learned
-- useState & useEffect
+## Concepts
+- useState, useEffect
 - Lifting state up
 - Conditional rendering
 - Derived state
